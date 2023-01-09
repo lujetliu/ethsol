@@ -24,7 +24,7 @@ pragma solidity ^0.8.4;
 			}
 			_owners[tokenId] = newOwner;
 		}
-	gax 消耗: 24457gas
+	gas 消耗: 24457gas
 	
 	Require:
 	require命令是solidity 0.8版本之前抛出异常的常用方法, 目前很多主流合约
@@ -36,7 +36,7 @@ pragma solidity ^0.8.4;
 			require(_owners[tokenId] == msg.sender, "Transfer Not Owner");
 			_owners[tokenId] = newOwner;
 		}
-	gax 消耗: 24743gas
+	gas 消耗: 24743gas
 ￼
 	Assert:
 	assert命令一般用于程序员写程序debug, 因为它不能解释抛出异常的原因(比
@@ -46,8 +46,10 @@ pragma solidity ^0.8.4;
 			assert(_owners[tokenId] == msg.sender);
 			_owners[tokenId] = newOwner;
 		}
-	gax 消耗: 24473gas
+	gas 消耗: 24473gas
 
+	error方法gas最少, 其次是assert, require方法消耗gas最多; error既可以告知
+	用户抛出异常的原因, 又能省gas
 */
 
 
