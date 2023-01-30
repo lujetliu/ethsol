@@ -70,14 +70,10 @@ pragma solidity ^0.8.4;
 */
 
 
-/*
-	实现 ERC20	
+import "./IERC20.sol"
 
-	函数
-		
-*/
-
-contract Token{
+// 实现 ERC20	
+contract ERC20 is IERC20 {
 	/*	状态变量
 		需要状态变量来记录账户余额, 授权额度和代币信息; 其中balanceOf, 
 		allowance和totalSupply为public类型, 会自动生成一个同名getter函数, 
