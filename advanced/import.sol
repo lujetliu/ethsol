@@ -1,4 +1,5 @@
-
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;  
 
 /* 
 	solidity支持利用import关键字导入其他源代码中的合约, 让开发更加模块化.
