@@ -12,7 +12,7 @@ pragma solidity ^0.8.4;
 		其中信息清零
 */
 
-contract NFTSwap is IERC721Receiver{
+contract NFTSwap is IERC721Receiver {
 	// 挂单事件(list), 撤单事件(revoke), 修改价格(update), 购买(purchase)
 	event List(address indexed seller, address indexed nftAddr, uint256 indexed tokenId, uint256 price);
     event Purchase(address indexed buyer, address indexed nftAddr, uint256 indexed tokenId, uint256 price);
