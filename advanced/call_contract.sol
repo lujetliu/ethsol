@@ -10,6 +10,13 @@ pragma solidity ^0.8.4;
 	本节主要介绍在已知合约代码(或接口)和地址情况下调用目标合约的函数
 */
 
+
+interface IOtherContract {
+    function getBalance() external returns(uint);
+    function setX(uint256 x) external payable;
+    function getX() external view returns(uint x);
+}
+
 contract OtherContract {
     uint256 private _x = 0; // 状态变量_x
     // 收到eth的事件, 记录amount和gas
@@ -59,3 +66,19 @@ contract CallContract{
         OtherContract(otherContract).setX{value: msg.value}(x);
     }
 }
+
+contract MyContract {
+	// 0xd9145CCE52D386f254917e481eB44e9943F39138 是 OtherContract 的合约地址
+    /* IOtherContract other = IOtherContract(0xd9145CCE52D386f254917e481eB44e9943F39138); */
+    OtherContract other = OtherContract(0xd9145CCE52D386f254917e481eB44e9943F39138);
+	// 以上方法均可以调用其他合约, 和golang不同的是, 可以用 IOtherContract 创
+	// 建合约变量 (TODO: 理解)
+    function call_getX() external view returns(uint x){
+        x = other.getX();
+    }
+    function call_setX(uint256 x) external{
+        other.setX(x);
+    }
+}
+
+

@@ -24,6 +24,8 @@ pragma solidity ^0.8.4;
 	- 通过全局符号导入特定的合约
 		import {Yeye} from './Yeye.sol';
 
+	import导入文件中的全局符号可以单独指定其中的合约, 纯函数, 结构体类型
+
 */
 
 import {Yeye} from './baba.sol';
