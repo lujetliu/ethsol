@@ -90,7 +90,7 @@
 		}
 
 	call了不存在的foo函数, call仍能执行成功, 并返回success, 但其实调用
-	的目标合约fallback函数
+	的目标合约fallback函数; 如果被调用合约没有实现fallback, 则call调用失败
 */
 
 
