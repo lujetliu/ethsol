@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
+
 /*
 	绕过合约检查
 	很多 freemint 的项目为了限制科学家(程序员)会用到 isContract() 方法, 希望
@@ -42,6 +45,8 @@
 		}
 
 */
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 // 用extcodesize检查是否为合约地址
 contract ContractCheck is ERC20 {
